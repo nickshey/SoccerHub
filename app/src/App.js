@@ -14,7 +14,7 @@ class App extends Component {
   componentDidMount() {
     // Remove the 'www.' to cause a CORS error (and see the error state)
 
-    axios.get(`http://api.football-data.org/v1/teams/65/players`)
+    axios.get(`http://api.football-data.org/v1/competitions/426/leagueTable`)
       .then(res => {
         // Transform the raw data by extracting the nested posts
         let details = res.data
@@ -59,7 +59,6 @@ class App extends Component {
 
     return (
       <ul>
-
         {this.state.details.players.map((players) =>
           <li key={players.name}>
             <p> Name: {players.name} </p>
@@ -81,13 +80,17 @@ class App extends Component {
         <p className = "App-intro">
         </p>
         <div className="leftHalf">
-          <h1>League Table</h1>
+          <h1 align="center">League Table</h1>
           <hr/>
         <div>
           {loading ? this.renderLoading() : this.renderDetails()}
         </div>
         </div>
         <div className="rightHalf">
+          <h1>Social Media</h1>
+          <a class="twitter-timeline" href="https://twitter.com/premierleague">Tweets by premierleague</a>
+          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
         </div>
       </div>
     );
