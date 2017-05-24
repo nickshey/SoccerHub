@@ -13,10 +13,10 @@ class App extends Component {
 
   componentDidMount() {
     // Remove the 'www.' to cause a CORS error (and see the error state)
-    axios.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=38.0336,-78.5080&radius=5000&opennow&type=restaurant|cafe|bar|pub&key=AIzaSyB2rVkBoZgtNeJAD4Y8rmpapc0nVl1Skk8`)
+    axios.get(`http://api.football-data.org/v1/teams/65/players`)
       .then(res => {
         // Transform the raw data by extracting the nested posts
-        let details = res.data.results
+        let details = res.data
 
         // Update state to trigger a re-render.
         // Clear any errors, and turn off the loading indiciator.
@@ -58,12 +58,10 @@ class App extends Component {
 
     return (
       <ul>
-        {this.state.details.map((results) =>
-          <li key={results.id}>
-            <p> Name: {results.name} </p>
-            <p> Rating: {results.rating}/5</p>
-            <p> Price: {results.price_level}/3</p>
-            <p> Address: {results.vicinity}</p>
+        {this.state.details.players.map((players) =>
+          <li key={players.name}>
+            <p> Name: {players.name} </p>
+            <p> Position: {players.position}</p>
             <hr/>
           </li>
         )}
@@ -77,12 +75,11 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Foodie Finder</h2>
         </div>
         <p className = "App-intro">
         </p>
         <div className="leftHalf">
-          <h1>League Table</h1>
+          <h1 align="center">League Table</h1>
           <hr/>
         <div>
           {loading ? this.renderLoading() : this.renderDetails()}
