@@ -59,7 +59,6 @@ class App extends Component {
 
     return (
       <ul>
-
         {this.state.details.players.map((players) =>
           <li key={players.name}>
             <p> Name: {players.name} </p>
