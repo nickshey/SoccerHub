@@ -2,7 +2,11 @@
 }
 
 .App-logo {
-  height: 40px;;
+  height: 40px;
+}
+
+.crests {
+  height: 20px;
 }
 
 .App-header {
@@ -14,6 +18,17 @@
 
 .App-intro {
   font-size: large;
+}
+
+.leftHalf {
+  background-color: white;
+  float: left;
+  width: 60%;
+}
+.rightHalf {
+  background-color: white;
+  float: left;
+  width: 40%;
 }
 
 @keyframes App-logo-spin {
