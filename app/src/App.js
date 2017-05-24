@@ -13,6 +13,7 @@ class App extends Component {
 
   componentDidMount() {
     // Remove the 'www.' to cause a CORS error (and see the error state)
+
     axios.get(`http://api.football-data.org/v1/teams/65/players`)
       .then(res => {
         // Transform the raw data by extracting the nested posts
@@ -58,6 +59,7 @@ class App extends Component {
 
     return (
       <ul>
+
         {this.state.details.players.map((players) =>
           <li key={players.name}>
             <p> Name: {players.name} </p>
@@ -79,7 +81,9 @@ class App extends Component {
         <p className = "App-intro">
         </p>
         <div className="leftHalf">
-          <h1 align="center">League Table</h1>
+
+          <h1>League Table</h1>
+
           <hr/>
         <div>
           {loading ? this.renderLoading() : this.renderDetails()}
