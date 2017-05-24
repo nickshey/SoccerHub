@@ -81,9 +81,7 @@ class App extends Component {
         <p className = "App-intro">
         </p>
         <div className="leftHalf">
-
           <h1>League Table</h1>
-
           <hr/>
         <div>
           {loading ? this.renderLoading() : this.renderDetails()}
