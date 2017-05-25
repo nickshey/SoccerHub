@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import logo from './logo.png';
 import './App.css';
 import axios from 'axios';
+import Pageselect from './components/header.js';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
 class App extends Component {
 
@@ -59,10 +65,9 @@ class App extends Component {
 
     return (
       <ul>
-        {this.state.details.players.map((players) =>
-          <li key={players.name}>
-            <p> Name: {players.name} </p>
-            <p> Position: {players.position}</p>
+        {this.state.details.standing.map((standing) =>
+          <li key={standing.teamName}>
+            <p> Name: {standing.teamName} </p>
             <hr/>
           </li>
         )}
@@ -70,12 +75,13 @@ class App extends Component {
     );
   }
 
+
   render() {
     const { loading } = this.state;
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        <div className='container'>
+          <Pageselect />
         </div>
         <p className = "App-intro">
         </p>
@@ -88,9 +94,6 @@ class App extends Component {
         </div>
         <div className="rightHalf">
           <h1>Social Media</h1>
-          <a class="twitter-timeline" href="https://twitter.com/premierleague">Tweets by premierleague</a>
-          <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
         </div>
       </div>
     );
