@@ -41,7 +41,7 @@ class Pageselect extends React.Component {
           {languages.map(function (lang) {
             return (
               
-              <li
+              <li className = "languages"
                 style={lang === this.state.selectedLanguage ? {color: '#6699ff'} : null}
                 onClick={this.updateLanguage.bind(null, lang)}
                 key={lang}><Link to={lang}>
