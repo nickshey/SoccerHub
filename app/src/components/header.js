@@ -5,6 +5,7 @@ import Bundesliga from './Bundesliga.js';
 import LaLiga from './LaLiga.js';
 import SerieA from './SerieA.js';
 import Ligue1 from './Ligue1.js';
+import Welcome from './welcome.js';
 import {
   BrowserRouter as Router,
   Route,
@@ -37,7 +38,9 @@ class Pageselect extends React.Component {
         {console.log(this.state.page)}
          
         <ul className='languages'>
-          <img src ={logo} alt = '' className = 'logo_img'/>
+
+          <Link to="/"><img src ={logo} alt = '' className = 'logo_img'/></Link>
+        
           {languages.map(function (lang) {
             return (
               
@@ -57,6 +60,7 @@ class Pageselect extends React.Component {
       <Route exact path="/Serie A" component={SerieA}/> 
       <Route exact path="/La Liga" component={LaLiga}/> 
       <Route exact path="/Ligue 1" component={Ligue1}/> 
+      <Route exact path="/" component={Welcome}/> 
       </div>
       </Router>
     )
