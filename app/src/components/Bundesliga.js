@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-class Bundesliga extends Component {
-   state = {
+import { Timeline } from 'react-twitter-widgets'
+class EPL extends Component {
+
+    state = {
     details: [],
     loading: true,
     error: null,
@@ -63,7 +65,7 @@ class Bundesliga extends Component {
               <b> Position: </b> {standing.position} <b> Wins: </b> {standing.wins} <b> Draws: </b> {standing.draws} <b> Losses: </b> {standing.losses}
               <b> Points: </b> {standing.points}
             </p>
-            <hr className = "leaguehr"/>
+            <hr className = "leaguehr" />
           </li>
         )}
       </ul>
@@ -82,19 +84,26 @@ class Bundesliga extends Component {
         </p>
         <div className="leftHalf">
           <h1 className="league" align="center">League Table</h1>
-        
-        </div>
-        <div>
-          <h1 className="rightHalf">Social Media</h1>
-          <hr/>
-          <div >
           {loading ? this.renderLoading() : this.renderDetails()}
         </div>
+        <h1 className="rightLabel">Social Media</h1>
+        <div className="rightHalf">
+            <Timeline
+              dataSource={{
+                sourceType: 'profile',
+                screenName: 'Bundesliga_EN'
+              }}
+              options={{
+                username: 'Bundesliga_EN',
+                height: '600',
+                quantity: '1'
+              }}
+        />
         </div>
-      </div>
+        </div>
     );
   }
-   
 }
 
-export default Bundesliga;
+
+export default EPL;

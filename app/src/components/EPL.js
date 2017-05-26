@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Timeline } from 'react-twitter-widgets'
 class EPL extends Component {
 
     state = {
@@ -83,16 +84,23 @@ class EPL extends Component {
         </p>
         <div className="leftHalf">
           <h1 className="league" align="center">League Table</h1>
-        
-        </div>
-        <div>
-          <h1 className="rightHalf">Social Media</h1>
-          <hr/>
-          <div >
           {loading ? this.renderLoading() : this.renderDetails()}
         </div>
+        <h1 className="rightLabel">Social Media</h1>
+        <div className="rightHalf">
+            <Timeline
+              dataSource={{
+                sourceType: 'profile',
+                screenName: 'premierleague'
+              }}
+              options={{
+                username: 'premierleague',
+                height: '600',
+                quantity: '1'
+              }}
+        />
         </div>
-      </div>
+        </div>
     );
   }
 }

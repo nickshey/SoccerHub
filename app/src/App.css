@@ -66,16 +66,23 @@ width: 100%;
   float: left;
   width: 60%;
 }
-.rightHalf {
+.rightLabel {
   color: #0066ff;
+  font: verdana;
   background: solid;
   background-color: lightgrey;
   border-radius: 5px;
   display: inline;
-  font: verdana;
-  font-size: 25px;
   position: relative;
-  left: 125px;
+  left: 225px;
+  align-content: center;
+  font-size: 30px;
+}
+
+.rightHalf{
+  background-color: white;
+  float: left;
+  width: 40%;
 }
 
 .crests {
@@ -95,9 +102,13 @@ width: 100%;
   font-size: 30px;
 }
 .leaguehr{
-  position: relative;
-  right: 300px;
-  width: 50%;
-  justify-content: center;
-  font-size: 30px;
+    display: block;
+    border-width: 1px;
+    color: black
+}
+
+.leagueLi{
+  display:block;
+  position:relative;
+  bottom: 400px;
 }
