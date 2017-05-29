@@ -63,8 +63,18 @@ class EPL extends Component {
     }
 
     return (
-
+  
       <div>
+        <tr>
+<th>Crest</th>
+<th>Team Name</th>
+<th>Games Played</th>
+<th>Posiiton</th>
+<th>Wins</th>
+<th>Draws</th>
+<th>Losses</th>
+<th>Points</th>
+        </tr>
         {this.state.details.standing.map((standing) =>
           <tr>
           <td><img className="crests" src = {standing.crestURI}></img></td>
