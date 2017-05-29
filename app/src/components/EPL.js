@@ -63,18 +63,21 @@ class EPL extends Component {
     }
 
     return (
-      <ul>
+
+      <div>
         {this.state.details.standing.map((standing) =>
-          <li key={standing.teamName}>
-            <p> 
-              <img className="crests" src = {standing.crestURI}></img> <b> Name: </b> {standing.teamName} <b>Games Played: </b> {standing.playedGames}
-              <b> Position: </b> {standing.position} <b> Wins: </b> {standing.wins} <b> Draws: </b> {standing.draws} <b> Losses: </b> {standing.losses}
-              <b> Points: </b> {standing.points}
-            </p>
-            <hr className = "leaguehr" />
-          </li>
+          <tr>
+          <td><img className="crests" src = {standing.crestURI}></img></td>
+          <td>{standing.teamName}</td>
+          <td>{standing.playedGames}</td>
+          <td>{standing.position}</td>
+          <td>{standing.wins}</td>
+          <td>{standing.draws}</td>
+          <td>{standing.losses}</td>
+           <td>{standing.points}</td>
+           </tr>
         )}
-      </ul>
+        </div>
     );
   }
 
