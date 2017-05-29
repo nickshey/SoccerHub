@@ -11,7 +11,16 @@ import {
   Route,
   Link
 } from 'react-router-dom';
-
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import Paper from 'material-ui/Paper';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
+import FlatButton from 'material-ui/FlatButton';
+/**
+ * A simple example of `AppBar` with an icon on the right.
+ * By default, the left icon is a navigation-menu.
+ */
 class Pageselect extends React.Component {
   constructor(props) {
     super(props);
@@ -35,26 +44,26 @@ class Pageselect extends React.Component {
     return (
       <Router>
       <div className = 'top'>
-        {console.log(this.state.page)}
-         
-        <ul className='languages'>
-
-          <Link to="/"><img src ={logo} alt = '' className = 'logo_img'/></Link>
-        
-          {languages.map(function (lang) {
-            return (
-              
-              <li className = "languages"
-                style={lang === this.state.selectedLanguage ? {color: '#6699ff'} : null}
-                onClick={this.updateLanguage.bind(null, lang)}
-                key={lang}><Link to={lang}>
-                  {lang}
-                 </Link> 
-              </li>
-            )
-          }, this)}
-        </ul>
-         <hr/>
+         <MuiThemeProvider>
+           <div>
+         <AppBar  style={{
+      width: '100%',
+      margin: '0 auto',
+      backgroundColor: "lightblue",
+      textAlign: "right",
+      textColor: "white",
+    }}
+       title= {<div>
+      <Link to="EPL"><FlatButton style = {{color: "white"}}label ="EPL"  /></Link>
+      <Link to="Bundesliga"><FlatButton style = {{color: "white"}} label ="Bundesliga"  /></Link>
+      <Link to="Serie A"><FlatButton style = {{color: "white"}}label ="Serie A"  /></Link>
+      <Link to="La Liga"><FlatButton style = {{color: "white"}}label ="La Liga"  /></Link>
+      <Link to="Ligue 1"><FlatButton style = {{color: "white"}} label ="Ligue 1"  /></Link>
+      </div>}
+      iconElementLeft= {<Link to="/"><img src ={logo} alt = '' className = 'logo_img'/></Link>}
+  />
+  </div>
+        </MuiThemeProvider>
       <Route exact path="/EPL" component={EPL}/> 
       <Route exact path="/Bundesliga" component={Bundesliga}/> 
       <Route exact path="/Serie A" component={SerieA}/> 

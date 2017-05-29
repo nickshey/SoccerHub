@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Timeline } from 'react-twitter-widgets'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import Paper from 'material-ui/Paper';
+import Menu from 'material-ui/Menu';
+import MenuItem from 'material-ui/MenuItem';
+import FlatButton from 'material-ui/FlatButton';
 class EPL extends Component {
 
     state = {
@@ -78,15 +84,21 @@ class EPL extends Component {
     return (
       <div>
         <div >
-          
+           <MuiThemeProvider>
+          <AppBar style={{
+      width: '100%',
+      margin: '0 auto',
+      backgroundColor: "lightgrey",
+      textAlign: "Left",
+      textColor: "white",
+    }} iconElementLeft = {<div></div>} title = {"Bundesliga League Table"}/>
+    </MuiThemeProvider>
         </div>
         <p className = "App-intro">
         </p>
         <div className="leftHalf">
-          <h1 className="league" align="center">League Table</h1>
           {loading ? this.renderLoading() : this.renderDetails()}
         </div>
-        <h1 className="rightLabel">Social Media</h1>
         <div className="rightHalf">
             <Timeline
               dataSource={{
