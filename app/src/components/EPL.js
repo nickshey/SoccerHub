@@ -7,6 +7,7 @@ import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
+
 class EPL extends Component {
 
     state = {
@@ -63,31 +64,34 @@ class EPL extends Component {
     }
 
     return (
-  
       <div>
-        <tr>
-<th>Crest</th>
-<th>Team Name</th>
-<th>Games Played</th>
-<th>Posiiton</th>
-<th>Wins</th>
-<th>Draws</th>
-<th>Losses</th>
-<th>Points</th>
+        <tr> 
+          <th>#</th> 
+          <th>Team</th>
+          <th>MP</th>
+          <th>W</th>
+          <th>D</th>
+          <th>L</th>
+          <th>GF</th>
+          <th>GA</th>
+          <th>GD</th>
+          <th>PTS</th>
         </tr>
         {this.state.details.standing.map((standing) =>
           <tr>
-          <td><img className="crests" src = {standing.crestURI}></img></td>
-          <td>{standing.teamName}</td>
-          <td>{standing.playedGames}</td>
           <td>{standing.position}</td>
+          <td><img className="crests" src = {standing.crestURI}></img> {standing.teamName}</td>
+          <td>{standing.playedGames}</td>
           <td>{standing.wins}</td>
           <td>{standing.draws}</td>
           <td>{standing.losses}</td>
-           <td>{standing.points}</td>
-           </tr>
+          <td>{standing.goals}</td>
+          <td>{standing.goalsAgainst}</td>
+          <td>{standing.goalDifference}</td>
+          <td>{standing.points}</td>
+          </tr>
         )}
-        </div>
+      </div>
     );
   }
 
@@ -120,7 +124,7 @@ class EPL extends Component {
               }}
               options={{
                 username: 'premierleague',
-                height: '600',
+                height: '770',
                 quantity: '1'
               }}
         />
