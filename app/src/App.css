@@ -84,6 +84,7 @@ width: 100%;
   background-color: white;
   float: left;
   width: 40%;
+
 }
 
 .crests {
@@ -139,9 +140,20 @@ font-size: 50px;
   color: #0099ff;
 font-size: 25px;
 }
-td{
-  border: 1px solid black;
-  border-collapse: collapse;
-  padding-left: 20px;
-  padding-right: 20px;
+table {
+    border-collapse: collapse;
+    width: 100%;
+    bottom:10px;
+}
+
+th, td {
+    text-align: left;
+    padding: 15px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: lightblue;
+    color: white;
 }
