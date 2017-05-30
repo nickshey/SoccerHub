@@ -7,6 +7,7 @@ import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
+import ReactTooltip from 'react-tooltip'
 
 class EPL extends Component {
 
@@ -65,17 +66,18 @@ class EPL extends Component {
 
     return (
       <div>
+        <ReactTooltip place="bottom"/>
         <tr> 
-          <th>#</th> 
-          <th>Team</th>
-          <th>MP</th>
-          <th>W</th>
-          <th>D</th>
-          <th>L</th>
-          <th>GF</th>
-          <th>GA</th>
-          <th>GD</th>
-          <th>PTS</th>
+          <th data-tip="Position">#</th> 
+          <th data-tip="Team">Team</th>
+          <th data-tip="Matches Played">MP</th>
+          <th data-tip="Wins">W</th>
+          <th data-tip="Draws">D</th>
+          <th data-tip="Losses">L</th>
+          <th data-tip="Goals For">GF</th>
+          <th data-tip="Goals Against">GA</th>
+          <th data-tip="Goal Difference">GD</th>
+          <th data-tip="Points">PTS</th>
         </tr>
         {this.state.details.standing.map((standing) =>
           <tr>
