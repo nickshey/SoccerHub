@@ -17,6 +17,8 @@ import EPL_logo from './EPL_logo.png';
 import Ligue_1_logo from './Ligue_1_logo.png';
 import Serie_A_logo from './Serie_A_logo.png';
 import Sampler from './sampler.png';
+import {FadeInLeft} from 'animate-components';
+
 class Welcome extends Component {
   render() {
     return (
@@ -35,7 +37,9 @@ class Welcome extends Component {
     </MuiThemeProvider>
         <div className = "welcome-sub"> 
         </div>
-        <img src = {Sampler} />
+        <FadeInLeft duration='4s' timingFunction='ease-in' as='img'>
+            <img src = {Sampler}/>
+        </FadeInLeft>
         <MuiThemeProvider>
           <div>
           <AppBar style={{

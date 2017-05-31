@@ -55,6 +55,7 @@ class EPL extends Component {
     );
   }
 
+
   renderDetails() {
     // Using destructuring to extract the 'error' and 'posts'
     // keys from state. This saves having to write "this.state.X" everwhere.
@@ -63,6 +64,7 @@ class EPL extends Component {
     if(error) {
       return this.renderError();
     }
+
 
     return (
       <div>
@@ -80,17 +82,17 @@ class EPL extends Component {
           <th data-tip="Points">PTS</th>
         </tr>
         {this.state.details.standing.map((standing) =>
-          <tr>
-          <td>{standing.position}</td>
-          <td><img className="crests" src = {standing.crestURI}></img> {standing.teamName}</td>
-          <td>{standing.playedGames}</td>
-          <td>{standing.wins}</td>
-          <td>{standing.draws}</td>
-          <td>{standing.losses}</td>
-          <td>{standing.goals}</td>
-          <td>{standing.goalsAgainst}</td>
-          <td>{standing.goalDifference}</td>
-          <td>{standing.points}</td>
+          <tr key = {standing.teamName}>
+            <td>{standing.position}</td>
+            <td><img className="crests" src = {standing.crestURI}></img> {standing.teamName}</td>
+            <td>{standing.playedGames}</td>
+            <td>{standing.wins}</td>
+            <td>{standing.draws}</td>
+            <td>{standing.losses}</td>
+            <td>{standing.goals}</td>
+            <td>{standing.goalsAgainst}</td>
+            <td>{standing.goalDifference}</td>
+            <td>{standing.points}</td>
           </tr>
         )}
       </div>

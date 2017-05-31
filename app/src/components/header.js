@@ -54,6 +54,7 @@ class Pageselect extends React.Component {
       textColor: "white",
     }}
        title= {<div>
+         
       <Link to="EPL"><FlatButton style = {{color: "white"}}label ="EPL"  /></Link>
       <Link to="Bundesliga"><FlatButton style = {{color: "white"}} label ="Bundesliga"  /></Link>
       <Link to="Serie A"><FlatButton style = {{color: "white"}}label ="Serie A"  /></Link>
