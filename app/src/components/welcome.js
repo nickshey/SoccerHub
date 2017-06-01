@@ -37,7 +37,7 @@ class Welcome extends Component {
     </MuiThemeProvider>
         <div className = "welcome-sub"> 
         </div>
-        <FadeInLeft duration='4s' timingFunction='ease-in' as='img'>
+        <FadeInLeft duration='2s' timingFunction='ease-in' as='img'>
             <img src = {Sampler}/>
         </FadeInLeft>
         <MuiThemeProvider>
