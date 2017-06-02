@@ -25,16 +25,18 @@ class Welcome extends Component {
       <div className="welcome">
         <MuiThemeProvider>
           <div>
-          <AppBar style={{
-      width: '100%',
-      margin: '0 auto',
-      backgroundColor: "lightgrey",
-      textAlign: "Left",
-      textColor: "white",
-    }} iconElementLeft = {<div></div>} title = {<div>Welcome to SoccerHub</div>}/>
+              <AppBar style={{
+                    width: '100%',
+                    margin: '0 auto',
+                    backgroundColor: "lightgrey",
+                    textAlign: "Left",
+                    textColor: "white", }} 
+                    iconElementLeft = {<div></div>} 
+                    title = {<div>Welcome to SoccerHub</div>}
+              />
     
-    </div>
-    </MuiThemeProvider>
+            </div>
+        </MuiThemeProvider>
         <div className = "welcome-sub"> 
         </div>
         <FadeInLeft duration='2s' timingFunction='ease-in' as='img'>
@@ -42,33 +44,36 @@ class Welcome extends Component {
         </FadeInLeft>
         <MuiThemeProvider>
           <div>
-          <AppBar style={{
-      width: '100%',
-      margin: '0 auto',
-      backgroundColor: "lightblue",
-      textAlign: "Center",
-      textColor: "white",
-    }} iconElementLeft = {<div></div>} title = {<div>Access all the latest Soccer updates at your fingertips.</div>}/>
-    <AppBar style={{
-      width: '100%',
-      margin: '0 auto',
-      backgroundColor: "lightgrey",
-      textAlign: "Center",
-      textColor: "white",
-    }} iconElementLeft = {<div></div>} title = {<div>Click a league below to begin.</div>}/>
-    
-    </div>
-    </MuiThemeProvider>
-        <div className = "welcomeimages">
-<Link to="EPL"><img className = "welcomeimages" src = {EPL_logo} /></Link>
-<Link to="Bundesliga"><img className = "welcomeimages" src = {Bundesliga_logo} /></Link>
-<Link to="Serie A"><img className = "welcomeimages" src = {Serie_A_logo} /></Link>
-<br/>
-<Link to="/La%20Liga" ><img className = "welcomeimages" src = {La_liga_logo} /></Link>
-<Link to="Ligue 1"><img className = "welcomeimages" src = {Ligue_1_logo} /></Link>
-
-</div>
+              <AppBar style={{
+                  width: '100%',
+                  margin: '0 auto',
+                  backgroundColor: "lightblue",
+                  textAlign: "Center",
+                  textColor: "white",}}
+                  iconElementLeft = {<div></div>}
+                  title = {<div>Access all the latest Soccer updates at your fingertips.</div>}
+              />
+              <AppBar style={{
+                width: '100%',
+                margin: '0 auto',
+                backgroundColor: "lightgrey",
+                textAlign: "Center",
+                textColor: "white", }} 
+                iconElementLeft = {<div></div>} 
+                title = {<div>Click a league below to begin.</div>}
+              />
+              
       </div>
+    </MuiThemeProvider>
+    <div className = "welcomeimages">
+      <Link to="EPL"><img className = "welcomeimages" src = {EPL_logo} /></Link>
+      <Link to="Bundesliga"><img className = "welcomeimages" src = {Bundesliga_logo} /></Link>
+      <Link to="Serie A"><img className = "welcomeimages" src = {Serie_A_logo} /></Link>
+      <br/>
+      <Link to="/La%20Liga" ><img className = "welcomeimages" src = {La_liga_logo} /></Link>
+      <Link to="Ligue 1"><img className = "welcomeimages" src = {Ligue_1_logo} /></Link>
+    </div>
+</div>
     );
   }
 }

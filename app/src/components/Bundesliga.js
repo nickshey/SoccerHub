@@ -18,31 +18,26 @@ class Bundesliga extends Component {
   }
 
   componentDidMount() {
-    // Remove the 'www.' to cause a CORS error (and see the error state)
 
     axios.get("http://api.football-data.org/v1/competitions/430/leagueTable", { 
           headers: { "X-Auth-Token" : "d552225d25d546c58e79bd0d09eedb5e"}
         })
-      .then(res => {
-        // Transform the raw data by extracting the nested posts
-        let details = res.data
-
-        // Update state to trigger a re-render.
-        // Clear any errors, and turn off the loading indiciator.
-        this.setState({
-          details,
-          loading: false,
-          error: null
-        });
-      })
-      .catch(err => {
-        // Something went wrong. Save the error in state and re-render.
-        this.setState({
-          loading: false,
-          error: err
-        });
-      });
+         .then(res => {
+            let details = res.data
+            this.setState({
+              details,
+              loading: false,
+              error: null
+                      });
+          })
+          .catch(err => {
+              this.setState({
+               loading: false,
+                 error: err
+                       });
+          });
   }
+
   renderLoading() {
     return <div>Loading...</div>;
   }
@@ -56,14 +51,10 @@ class Bundesliga extends Component {
   }
 
   renderDetails() {
-    // Using destructuring to extract the 'error' and 'posts'
-    // keys from state. This saves having to write "this.state.X" everwhere.
     const { error, details } = this.state;
-
     if(error) {
       return this.renderError();
     }
-
     return (
       <div>
         <ReactTooltip place="bottom"/>
@@ -104,17 +95,19 @@ class Bundesliga extends Component {
       <div>
         <div >
            <MuiThemeProvider>
-          <AppBar style={{
-      width: '100%',
-      margin: '0 auto',
-      backgroundColor: "lightgrey",
-      textAlign: "Left",
-      textColor: "white",
-    }} iconElementLeft = {<div></div>} title = {"Bundesliga League Table"}/>
-    </MuiThemeProvider>
+              <AppBar style={{
+                  width: '100%',
+                  margin: '0 auto',
+                  backgroundColor: "lightgrey",
+                  textAlign: "Left",
+                  textColor: "white",
+                  }} 
+                  iconElementLeft = {<div></div>} 
+                  title = {"Bundesliga League Table"}
+                />
+            </MuiThemeProvider>
         </div>
-        <p className = "App-intro">
-        </p>
+        <p className = "App-intro"></p>
         <div className="leftHalf">
           {loading ? this.renderLoading() : this.renderDetails()}
         </div>
