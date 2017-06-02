@@ -22,16 +22,18 @@ class App extends Component {
         <div className='container'>
           <Pageselect />
           <MuiThemeProvider>
-            <AppBar  style={{
-      width: '100%',
-      margin: '0 auto',
-      backgroundColor: "lightblue",
-      textAlign: "center",
-      textColor: "white",
+              <AppBar  style={{
+                  width: '100%',
+                  margin: '0 auto',
+                  backgroundColor: "lightblue",
+                  textAlign: "center",
+                  textColor: "white",
 
-    }}
-       title= {<div>Taylor Rohrich and Nojan Sheybani. Launch 2017.</div>} iconElementLeft= {<div></div>}/>
-       </MuiThemeProvider>
+                }}
+                  title= {<div>Taylor Rohrich and Nojan Sheybani. Launch 2017.</div>} 
+                  iconElementLeft= {<div></div>}
+                />
+          </MuiThemeProvider>
         </div>
       </div>
     );
