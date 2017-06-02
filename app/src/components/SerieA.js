@@ -18,7 +18,7 @@ class SerieA extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://api.football-data.org/v1/competitions/438/leagueTable", { 
+    axios.get("https://api.football-data.org/v1/competitions/438/leagueTable", { 
           headers: { "X-Auth-Token" : "d552225d25d546c58e79bd0d09eedb5e"}
         })
       .then(res => {
